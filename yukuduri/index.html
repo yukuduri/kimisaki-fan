@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>外部サイトへのジャンプ-君咲ふぁんねっと</title> 
+    <link rel="stylesheet" href="../css/reset.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="../js/script.js"></script>
+  </head>
+
+  <body>
+    <noscript><section class="item footer"><h1 class="heading">このサイトの正常な表示・動作には、JavaScriptが必要です。<br>JavaScript対応のブラウザで、JavaScriptを有効にしてから再度アクセスしてください。</h1></section></noscript>
+    <header class="header item">
+      <p class="heading">外部サイトへのジャンプ</p>
+      <h1>
+        <a href="../">
+          <img class="logo" src="../images/logo.svg" alt="kimisaki-fan.net">
+        </a>
+      </h1>
+      <p class="heading">外部サイトを開こうとしています。よろしいですか？</p>
+      <script type="text/javascript">
+        URL = 'http://yukuduri.jp'
+        ref = document.referrer;
+        if(ref.indexOf('http://kimisaki-fan.net/') != 0){
+          move(URL);
+        }
+        function jumpToPage(){
+          window.open(URL);
+        }
+        document.write('<p class="heading">ジャンプ先：'+URL+'</p>')
+      </script>
+      <p class="heading button" onclick="jumpToPage()">はい</p>
+      <p class="heading button" onclick="move('../')">いいえ</p>
+    </header>
+
+
+
+    <section class="item footer">
+      <p>
+        ©2018 kimisaki-fan.net
+      </p>
+    </section>
+  </body>
+</html>
