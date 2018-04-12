@@ -16,6 +16,9 @@
 
     <title>君咲ふぁんねっと</title> 
     <link rel="stylesheet" href="css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+            crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
@@ -35,6 +38,8 @@
   
   <body>
     <noscript><section class="item footer"><h1 class="heading">このサイトの正常な表示・動作には、JavaScriptが必要です。<br>JavaScript対応のブラウザで、JavaScriptを有効にしてから再度アクセスしてください。</h1></section></noscript>
+
+    
     <header class="header item">
      <p class="heading">あんガル二次創作まとめサイト(非公式)</p>
       <h1>
@@ -91,7 +96,7 @@
       </p>
     </section>
     
-    <section class="item item-m" onclick="jump('http://yukuduri.jp/kimisaki-vote/')">
+    <section class="item item-m" onclick="move('vote/')">
       <img class="image" src="images/no_image.svg" alt="no_image">
       <div class="category">あんガルキャラ人気投票結果（仮）</div>
       <p class="description">
@@ -110,9 +115,22 @@
       <p class="description">　当サイトの運営者、yukuduriのwebサイトはこちら。</p>
     </section>
     
+    <section class="item footer">
+      <p>
+        ©2018 kimisaki-fan.net
+      </p>
+    </section>
+    
+    
+    <div class="Loading">
+      <p class="LoadingText">Now Loading...</p>
+    </div>
+
     <script type="text/javascript" src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
     <script type="text/javascript">
       window.onload = function() {
+        $('.Loading').hide();
+        
         new Masonry('body', {
           itemSelector: '.item',
           columnWidth: 180,
@@ -120,14 +138,6 @@
         });
       }; 
     </script>
-
-
-
-    <section class="item footer">
-      <p>
-        ©2018 kimisaki-fan.net
-      </p>
-    </section>
     
     
     

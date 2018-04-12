@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116727610-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-116727610-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="あんガル非公式人気投票特設ページ">
+
+    <title>あんガル人気投票特設ページ（仮）|君咲ふぁんねっと</title>
+    <!-- このタイトルがブラウザ上に表示　-->
+
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/kimisaki-vote-style.css">
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.csv2table-0.02-b-4.8.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $('#table_disp').csv2table('result_2017.csv');
+      });
+    </script>
+  </head>
+
+  <body>
+    <header class="header">
+     
+      <h1><a href="../"><img class="logo" src="../images/logo.svg"></a><br>あんガルキャラ人気投票集計結果（仮）</h1>
+    </header>
+
+    <div class="clearfix">
+      <main class="main">
+        <p>※<a href="http://yukuduri.jp/" target="_blank">yukuduri.jp</a>が企画した非公式のものであり、非公式含む、その他の同様の企画並びにHappy Elements株式会社とは一切関係ありません。<br>
+        また、アンケートやコメント内容を載せた正式版については、このページにて後日公開予定です。</p>
+        <h3>☆順位について☆<br>
+          一推し投票は2票分加算されます。
+          <br>得票数が同数の場合、一推し数が多い順に、一推し数も同数の場合はコメント数が多い順に並んでいます。</h3>
+        <h2>今回、投票にご協力頂けた人数は44名です。<br>次回は2018年11月22日～12月31日に実施予定です。<br>詳細は正式版公開時に発表します。</h2>
+        <div id="table_disp" align="center"></div>
+      </main>
+
+
+
+    </div>
+
+    <footer class="footer clearfix">
+      <p class="copyright">当ページは、Happy Elements株式会社「あんさんぶるガールズ！！」の画像を利用しております。<br>該当画像の転載・配布等は禁止しております。<br>
+            ©Happy Elements K.K<br><br><br>
+            ©2018 kimisaki-fan.net
+      </p>
+
+    </footer>
+  </body>
+
+</html>

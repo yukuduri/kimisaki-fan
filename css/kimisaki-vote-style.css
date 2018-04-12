@@ -1,0 +1,144 @@
+@charset "UTF-8"
+
+    html {
+        font-size: 62.5%;
+}
+body {
+    color: #333;
+    font-size: 1.2rem;
+
+    /* フォントの種類の指定 */
+    font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+*, *::before, *::after {
+    box-sizing: borderbox;
+}
+
+/* リンクの設定 */
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+} 
+
+/*a:link, a:visited {color: #000099;} */
+a:hover, a:active {
+    color: #ff6600;
+    text-decoration: none;
+} 
+
+/** ヘッダーやヘッダーメニュー **/
+.header  {
+    /* ヘッダーを固定 注意：訂正が必要
+    position: fixed;*/
+    background-color: #f6c;
+
+    /* 幅 */
+    width: 100%;
+
+    /* 上下の余白 */
+    padding: 0 0 10px;
+    
+    text-align: center;
+
+}
+
+/** コンテンツ要素（メイン、サイドメニュー） **/
+body{
+    background: #151515 url('../vote/images/back.PNG') no-repeat fixed center bottom;
+    background-size: cover;
+   
+} 
+
+.wrapper {
+    width: 66%;
+
+    /* 余白 */
+    margin: 10px auto 20px; 
+}
+
+.button{
+    display: inline-block;
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 4px;
+    background-color: #fc0;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+}
+.button:hover{
+    opacity: 0.9;
+}
+
+/** メイン領域 **/
+.main {
+    display: block;
+
+    /* 要素の位置指定 */
+    float: left;
+
+    width: 100%;
+    
+    background: rgba(255,255,255,0.5);
+    text-align: center;
+}
+
+
+.heading {
+    margin: 10px 0px 0px;
+    padding: 10px 12px;
+    background-color: #000000;
+    color:#ffffff;
+    letter-spacing: 1px;
+    font-size: 1.6rem;
+}
+.heading a:link{
+    color: #0ff; text-decoration: underline;} 
+.heading a:visited{
+    color: #3f0; text-decoration: underline;}
+.heading a:hover a:active{ 
+    color: #00f;
+    text-decoration: none;}
+.default a:link {
+    color: #0000EE;
+    text-decoration: underline;
+}
+
+.default a:visited {
+    color: #551A8B;
+    text-decoration: underline;
+}
+
+.default a:hover { 
+    color: #900;
+    text-decoration: none;}
+
+.default a:active {
+    color: #FF0000;
+    text-decoration: underline;
+}
+
+/** フッター **/
+.footer {
+    width: 100%;
+    padding: 20px 0 30px;
+    background-color: #6699cc;
+    color: #fff;
+}
+.copyright {
+    margin-top: 3px;
+    text-align: center;
+    letter-spacing: 1px
+}
+.copyright a:link, .copyright a:visited{color:#05f}
+
+/** レイアウト崩れ防止の為、スタイル設定をリセットするクラス **/
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.logo {
+    height: 164px;
+}
