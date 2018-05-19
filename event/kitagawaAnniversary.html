@@ -31,6 +31,20 @@
           <img class="logo" src="../images/logo.svg" alt="kimisaki-fan.net">
         </a>
       </h1>
+      <p class="heading"><script type="text/javascript">
+        //更新日時の表示
+          var weeks = new Array("日", "月", "火", "水", "木", "金", "土");
+          lastUpdateDate = new Date(document.lastModified);
+          var msg = "最終更新日時：";
+          msg += lastUpdateDate.getFullYear() + "年";
+          msg += (lastUpdateDate.getMonth()+1) + "月";
+          msg += lastUpdateDate.getDate() + "日";
+          msg += "(" + weeks[lastUpdateDate.getDay()] + ")";
+          msg += lastUpdateDate.getHours() + "時";
+          msg += lastUpdateDate.getMinutes() + "分";
+        
+        document.write(msg);
+        </script></p>
     </header>
     
     <section class="item item-game item-l">
