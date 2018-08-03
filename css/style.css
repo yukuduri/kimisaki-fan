@@ -132,6 +132,22 @@ opacity: 0.8;
   text-decoration: none;
 }
 
+.button-s{
+  display: inline-block;
+  width: auto;
+  padding: 3px;
+  margin: 5px;
+  border-radius: 4px;
+  background-color: peachpuff;
+  color: #000;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.button-s.all {
+  background-color: hotpink;
+  color: #fff;
+}
+
 .header > .button,
 .footer > .button{
   width: 200px;

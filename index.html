@@ -48,6 +48,14 @@
         </a>
       </h1>
       <p class="heading">気になったものをクリックしてみてください。</p>
+      <br>
+      <p class="heading" style="font-size: 1.8rem;">絞り込み</p>
+      <p class="heading button-s all" onclick="reBuild()">全て表示</p>
+      <p class="heading button-s" onclick="reBuild('web')">web</p>
+      <p class="heading button-s" onclick="reBuild('game')">ゲーム</p>
+      <p class="heading button-s" onclick="reBuild('illust')">イラスト</p>
+      <p class="heading button-s" onclick="reBuild('other')">その他</p>
+      <p class="heading button-s" onclick="reBuild('unei')">運営</p>
     </header>
     <!-- テンプレ用
 <section class="item item-web item-m">
@@ -75,7 +83,7 @@
 </section>
     -->
     
-    <section class="item item-m" onclick="move('event/kitagawaAnniversary.html')">
+    <section class="item item-unei item-m" onclick="move('event/kitagawaAnniversary.html')">
       <img class="image" src="images/kitagawa_anniversary.svg" alt="北川ゆき合同イラ本応募受付中">
       <div class="category">北川ゆき合同イラ本の募集要項はこちら！</div>
     </section>
@@ -104,7 +112,7 @@
       <p class="description">　Twitterであんガルの絵を載せてます。</p>
     </section>
     
-    <section class="item item-m" onclick="move('register/')">
+    <section class="item item-register item-m" onclick="move('register/')">
       <div class="category">作品登録のお願い</div>
       <p class="description">
       　当サイトは、Happy Elements株式会社「あんさんぶるガールズ」の二次創作を応援しています。<br>
@@ -113,11 +121,11 @@
       </p>
     </section>
     
-    <section class="item item-m" onclick="move('bbs/')">
+    <section class="item item-unei item-m" onclick="move('bbs/')">
       <img class="image" src="images/bbs.svg" alt="bbs">
     </section>
     
-    <section class="item item-m" onclick="move('vote/')">
+    <section class="item item-unei item-m" onclick="move('vote/')">
       <img class="image" src="images/no_image.svg" alt="no_image">
       <div class="category">あんガルキャラ人気投票結果（仮）</div>
       <p class="description">
@@ -125,12 +133,12 @@
       </p>
     </section>
     
-    <section class="item" onclick="move('sisters/')">
+    <section class="item item-unei" onclick="move('sisters/')">
       <img class="image" src="images/sisters.png">
       <div class="category">エイプリルフール２０１８</div>
     </section>
     
-    <section class="item" onclick="jump('http://yukuduri.jp')">
+    <section class="item item-unei" onclick="jump('http://yukuduri.jp')">
       <img class="image" src="images/yukuduri_jp.svg" alt="yukuduri.jp">
       <div class="category">サイト運営者</div>
       <p class="description">　当サイトの運営者、yukuduriのwebサイトはこちら。</p>

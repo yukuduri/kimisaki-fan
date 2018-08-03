@@ -23,3 +23,35 @@ function footer(option){
   }
   document.write(html);
 }
+
+function reBuild(key){
+  var countOfContents = 1;
+  if (key==null){
+    $('.item').show();
+  }else{
+    key = '.item-'+key;
+    $('.item-m').hide();
+    var contents = [".item-web", ".item-game", ".item-illust", ".item-other", ".item-unei"];
+    contents.forEach(function(value){
+      if(key==value){
+        $(key).show();
+      }else{
+        $(value).hide();
+      }
+    });
+    $('.item-register').show();
+    countOfContents = $("section"+key).length;
+  }
+  
+  var replaceWords = "<p class=\"description\">  当サイトは、Happy Elements株式会社「あんさんぶるガールズ」の二次創作を応援しています。<br>  webサイトからイラスト、ゲーム、コスプレまでジャンルを問いません。二次創作活動をしている方のTwitterやwebサイト、またはその作品へのリンクを貼らせて頂きます。<br>詳細はこちらをクリック。</p>";
+  if(countOfContents==0){
+    replaceWords = "<p class=\"description\">このコンテンツは未登録です。ここをクリックして登録してください！<p>"
+  }
+  $(".item-register .description").replaceWith(replaceWords);
+  
+  new Masonry('body', {
+    itemSelector: '.item',
+    columnWidth: 180,
+    gutter: 4
+  });
+}
