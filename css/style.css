@@ -16,7 +16,7 @@ body {
   box-sizing: border-box;
 }
 a:link, a:visited, a:hover, a:active {
-  color: #7C5119;
+  color: #00f;
   text-decoration: none;
 }
 
@@ -38,6 +38,7 @@ a:link, a:visited, a:hover, a:active {
   color: #000;　/*categoryの文字色*/
   letter-spacing: 1px;
   font-family: "Rounded Mplus 1c";
+  text-align: left;
 }
 .item .category::before {
   content: "";
@@ -53,6 +54,7 @@ a:link, a:visited, a:hover, a:active {
   margin: 10px;
   line-height: 1.5;
   color: #111; /*descriptionの文字色*/
+  text-align: left
 }
 /*.item > a {
   display: block;
