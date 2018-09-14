@@ -196,13 +196,14 @@ opacity: 0.8;
   .button-s{
     font-size: 3rem;
   }
+  .item-l{
+    width: 100%;
+  }
 }
 
 @media(max-width: 425px){
   .item{
     width: 100%;
   }
-  .item-l{
-    width: 100%;
-  }
+  
 }
