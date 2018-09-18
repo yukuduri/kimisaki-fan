@@ -24,6 +24,22 @@ function footer(option){
   document.write(html);
 }
 
+$(function(){
+  $("body").attr("oncontextmenu", "return false");
+  $("img").attr({
+    onmousedown: "return false",
+    oncontextmenu: "return false"
+  });
+  $("img").css({
+    "-webkit-touch-callout":"none",
+    "-webkit-user-select":"none",
+    "-moz-touch-callout":"none",
+    "-moz-user-select":"none",
+    "touch-callout":"none",
+    "user-select":"none"
+  });
+});
+
 function reBuild(key){
   var countOfContents = 1;
   if (key=="all"){

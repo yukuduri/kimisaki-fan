@@ -38,7 +38,7 @@
     
   </head>
   
-  <body oncontextmenu="return false;">
+  <body>
     <noscript><section class="item footer"><h1 class="heading">このサイトの正常な表示・動作には、JavaScriptが必要です。<br>JavaScript対応のブラウザで、JavaScriptを有効にしてから再度アクセスしてください。<br>©2018 kimisaki-fan.net</h1></section></noscript>
 
     
@@ -53,33 +53,33 @@
       <br>
       <p class="heading" style="font-size: 1.8rem;">絞り込み</p>
       <p class="heading button-s all" onclick="reBuild('all')" id="all">全て表示</p>
+      <p class="heading button-s" onclick="reBuild('illust')" id="illust">イラスト・漫画</p>
       <p class="heading button-s" onclick="reBuild('web')" id="web">web</p>
       <p class="heading button-s" onclick="reBuild('game')" id="game">ゲーム</p>
-      <p class="heading button-s" onclick="reBuild('illust')" id="illust">イラスト</p>
       <p class="heading button-s" onclick="reBuild('other')" id="other">その他</p>
       <p class="heading button-s" onclick="reBuild('unei')" id="unei">運営</p>
     </header>
     <!-- テンプレ用
 <section class="item item-web item-m">
-<img class="image" src="../images/no_image.svg" alt="webサイト">
+<img class="image" src="images/no_image.svg" alt="webサイト">
 <div class="category">webサイト</div>
 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </section>
 
 <section class="item item-game item-m">
-<img class="image" src="../images/no_image.svg" alt="ゲーム">
+<img class="image" src="images/no_image.svg" alt="ゲーム">
 <div class="category">ゲーム</div>
 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </section>
 
 <section class="item item-illust item-m">
-<img class="image" src="../images/no_image.svg" alt="イラスト">
+<img class="image" src="images/no_image.svg" alt="イラスト">
 <div class="category">イラスト</div>
 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </section>
 
 <section class="item item-other item-m">
-<img class="image" src="../images/no_image.svg" alt="その他コンテンツ">
+<img class="image" src="images/no_image.svg" alt="その他コンテンツ">
 <div class="category">その他コンテンツ</div>
 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </section>
@@ -112,6 +112,24 @@
       <img class="image" src="../images/hamutya.jpg" alt="はむ茶">
       <div class="category">はむ茶</div>
       <p class="description">　Twitterであんガルの絵を載せてます。</p>
+    </section>
+    
+    <section class="item item-illust item-m" onclick="jump('https://www.pixiv.net/member.php?id=856843')">
+      <img class="image" src="images/nininikkyaku.jpg" alt="イラスト">
+      <div class="category">二人一脚</div>
+      <p class="description">あんガルの同人誌描いてます。BOOTHにて取扱い中。</p>
+    </section>
+    
+    <section class="item item-illust item-m" onclick="jump('https://www.pixiv.net/member_illust.php?mode=medium&illust_id=66859859')">
+      <img class="image" src="images/tidiminori.png" alt="イラスト">
+      <div class="category">チヂミノリ</div>
+      <p class="description">あんガルの本などを思い立つと作ります。こみトレ33に申し込んだので、良ければ遊びに来てください。大阪です。</p>
+    </section>
+    
+    <section class="item item-illust item-m" onclick="jump('https://twitter.com/tefu2ota2')">
+      <img class="image" src="images/sarasa_kanbi.jpg" alt="イラスト">
+      <div class="category">さらさ/かんび</div>
+      <p class="description">呼び方はさらさでも、かんびでもどちらでも構いません。たま～にあんガルの絵をあげています。</p>
     </section>
     
     <section class="item item-register item-m" onclick="move('register/')">
