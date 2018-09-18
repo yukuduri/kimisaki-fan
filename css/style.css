@@ -183,6 +183,7 @@ opacity: 0.8;
 @media(max-width: 1024px){
   .LoadingText{
     padding: 100px 0 0;
+    font-size: 50px;
     width: 100%;
   }
   
@@ -203,7 +204,7 @@ opacity: 0.8;
 
 @media(max-width: 425px){
   .LoadingText{
-    font-size: 200%;
+    font-size: 30px;
   }
   
   .item{
