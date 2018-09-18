@@ -183,7 +183,7 @@ opacity: 0.8;
 
 @media(max-width: 1024px){
   .LoadingText{
-    font-size: 100%;
+    font-size: 80vw;
     width: 100%;
   }
   
