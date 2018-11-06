@@ -1,6 +1,12 @@
 //外部サイトにジャンプする
 function jump(URL){
   window.open(URL);
+  
+  //googleアナリティクス
+  gtag('event', URL, {
+    'app_name': 'click',
+    'screen_name': URL
+  });
 }
 
 //サイト内移動をする
