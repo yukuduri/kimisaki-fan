@@ -165,16 +165,16 @@
       </p>
     </section>
     
-    <section class="item item-unei" onclick="move('sisters/')">
+    <section class="item item-unei item-s" onclick="move('sisters/')">
       <img class="image" src="images/sisters.png">
       <div class="category">エイプリルフール２０１８</div>
     </section>
     
-    <section class="item item-unei" onclick="jump('http://yukuduri.jp')">
+    <!--<section class="item item-unei item-s" onclick="jump('http://yukuduri.jp')">
       <img class="image" src="images/yukuduri_jp.svg" alt="yukuduri.jp">
       <div class="category">サイト運営者</div>
       <p class="description">当サイトの運営者、yukuduriのwebサイトはこちら。</p>
-    </section>
+    </section>-->
     
   
     <section class="item footer">
@@ -185,21 +185,22 @@
     
     <div class="Loading">
       <p class="LoadingText">Now Loading...</p>
+      <!--<progress id="LoadProgress" max="100" value="0"></progress>
+      <p id="LoadPercent">0%</p>-->
     </div>
 
     <script type="text/javascript" src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script type="text/javascript" src="js/pace.min.js"></script>
     <script type="text/javascript">
-      window.onload = function() {
+      Pace.on("done",function(){
         $('.Loading').hide();
-        
         new Masonry('body', {
           itemSelector: '.item',
           columnWidth: 180,
           gutter: 4
         });
-      }; 
+      });
     </script>
-    
     
     <noscript>--></noscript>
   </body>
