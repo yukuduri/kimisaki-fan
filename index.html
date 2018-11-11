@@ -192,9 +192,49 @@
     <script type="text/javascript" src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
     <script type="text/javascript" src="js/pace.min.js"></script>
     <script type="text/javascript">
+      /* 
+      https://stackoverflow.com/questions/43887415/pace-js-never-reaches-100 
+      */
+      /*********************************************************************************************************************/
+      (function ($) {
+        Drupal.behaviors.pacesafarijs = {
+          attach: function (context, settings) {      
+            if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+              var initDestroyTimeOutPace = function() {
+                var counter = 0;
+
+                var refreshIntervalId = setInterval( function(){
+                  var progress; 
+
+                  if( typeof $( '.pace-progress' ).attr( 'data-progress-text' ) !== 'undefined' ) {
+                    progress = Number( $( '.pace-progress' ).attr( 'data-progress-text' ).replace("%" ,'') );
+                  }
+
+                  if( progress === 99 ) {
+                    counter++;
+                  }
+
+                  if( counter > 50 ) {
+                    clearInterval(refreshIntervalId);
+                    Pace.stop();
+                    $('.Loading').hide();
+                    new Masonry('body', {
+                      itemSelector: '.item',
+                      columnWidth: 180,
+                      gutter: 4
+                    });
+                  }
+                }, 100);
+              }
+              initDestroyTimeOutPace();
+            }
+          }
+        }
+      });
+      /*********************************************************************************************************************/
+      
       Pace.on("done",function(){
         $('.Loading').hide();
-        $('.pace').hide();  //iOS用
         new Masonry('body', {
           itemSelector: '.item',
           columnWidth: 180,
