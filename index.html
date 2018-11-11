@@ -217,6 +217,7 @@
                   if( counter > 50 ) {
                     clearInterval(refreshIntervalId);
                     Pace.stop();
+                    $('.pace').hide();
                     $('.Loading').hide();
                     new Masonry('body', {
                       itemSelector: '.item',
