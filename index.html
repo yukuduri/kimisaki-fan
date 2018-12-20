@@ -27,15 +27,17 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/blockadblock.js"></script>
     <script>
-      /// Function called if AdBlock is not detected
-      function adBlockNotDetected() {
-        //alert('AdBlock is not enabled');
-      }
       // Function called if AdBlock is detected
       function adBlockDetected() {
         //alert('AdBlock is enabled');
         $('.footer-space').show();
       }
+      /// Function called if AdBlock is not detected
+      function adBlockNotDetected() {
+        //alert('AdBlock is not enabled');
+        $('.footer-space').hide();
+      }
+      
 
       // Recommended audit because AdBlock lock the file 'blockadblock.js' 
       // If the file is not called, the variable does not exist 'blockAdBlock'
