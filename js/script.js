@@ -43,7 +43,8 @@ $(function(){
     "-moz-user-select":"none",
     "touch-callout":"none",
     "user-select":"none"
-  });
+  })
+
 });
 
 function reBuild(key){
@@ -61,6 +62,7 @@ function reBuild(key){
       }
     });
     $('.item-register').show();
+    $('.item-sp').show();
     countOfContents = $("section.item-"+key).length;
   }
   

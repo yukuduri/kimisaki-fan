@@ -25,6 +25,38 @@
     <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/blockadblock.js"></script>
+    <script>
+      /// Function called if AdBlock is not detected
+      function adBlockNotDetected() {
+        //alert('AdBlock is not enabled');
+      }
+      // Function called if AdBlock is detected
+      function adBlockDetected() {
+        //alert('AdBlock is enabled');
+        $('.footer-space').show();
+      }
+
+      // Recommended audit because AdBlock lock the file 'blockadblock.js' 
+      // If the file is not called, the variable does not exist 'blockAdBlock'
+      // This means that AdBlock is present
+      if(typeof blockAdBlock === 'undefined') {
+        adBlockDetected();
+      } else {
+        blockAdBlock.setOption({ debug: true });
+        blockAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+      }
+      
+      var $win = $(window);
+
+      $win.on('load resize', function() {
+        var windowWidth = window.innerWidth;
+
+        if (windowWidth < 1024) {
+          $('.footer-space').show();
+        } 
+      });
+    </script>
     
     <!--<script type="text/javascript">
       function AprilFool(){
@@ -84,7 +116,7 @@
 <div class="category">その他コンテンツ</div>
 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </section>
-    -->
+    テンプレ　-->
     
     <noscript><!--</noscript>
     <section class="item item-unei item-m" onclick="move('event/kitagawaAnniversary.html')">
@@ -134,22 +166,31 @@
       <p class="description">呼び方はさらさでも、かんびでもどちらでも構いません。たま～にあんガルの絵をあげています。</p>
     </section>
     
-      <section class="item item-illust item-m" onclick="jump('https://sagihaya.work')">
-        <img class="image" src="images/sagihaya.jpeg" alt="イラスト">
-        <div class="category">さぎはや</div>
-        <p class="description">こんなとき絵を描きます<br>
-          （デジタルでもアナログでも）<br>
-          ・気が向いたとき<br>
-          ・追い詰められたとき<br>
-          ・誰かにプレゼントを押し付けたくなったとき</p>
-      </section>
+    <section class="item item-illust item-m" onclick="jump('https://sagihaya.work')">
+      <img class="image" src="images/sagihaya.jpeg" alt="イラスト">
+      <div class="category">さぎはや</div>
+      <p class="description">こんなとき絵を描きます<br>
+       （デジタルでもアナログでも）<br>
+        ・気が向いたとき<br>
+        ・追い詰められたとき<br>
+        ・誰かにプレゼントを押し付けたくなったとき</p>
+    </section>
+      
     
+      
     <section class="item item-register item-m" onclick="move('register/')">
       <div class="category">作品登録のお願い</div>
       <p class="description">
       当サイトは、Happy Elements株式会社「あんさんぶるガールズ」の二次創作を応援しています。<br>
       webサイトからイラスト、ゲーム、コスプレまでジャンルを問いません。二次創作活動をしている方のTwitterやwebサイト、またはその作品へのリンクを貼らせて頂きます。<br>
       詳細はこちらをクリック。
+      </p>
+    </section>
+    
+    <section class="item item-sp item-m" onclick="jump('https://www.amazon.co.jp/?tag=yukuduri-22')">
+      <div class="category">サイト運営支援のお願い</div>
+      <p class="description">
+        当サイト並びに君咲ふぁんねっと関連サイトは、ドメイン維持費用、サーバー維持費等はサイト運営者の自費で運営されています。<br>サイト利用者の皆様がここをクリックしてAmazonでお買い物していただくだけで、その負担費用の支えになります。
       </p>
     </section>
     
@@ -165,11 +206,6 @@
       </p>
     </section>
     
-    <section class="item item-unei item-s" onclick="move('sisters/')">
-      <img class="image" src="images/sisters.png">
-      <div class="category">エイプリルフール２０１８</div>
-    </section>
-    
     <!--<section class="item item-unei item-s" onclick="jump('http://yukuduri.jp')">
       <img class="image" src="images/yukuduri_jp.svg" alt="yukuduri.jp">
       <div class="category">サイト運営者</div>
@@ -178,9 +214,25 @@
     
   
     <section class="item footer">
-      <script>footer('last-update');</script>
+      <script>
+        footer('last-update');
+      </script>
+      <hr>
+      
+      <p>当サイト運営のためのご支援、よろしくおねがいします。</p>
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=21&l=ur1&category=pantry&banner=0EWVM8FA828AXG725GG2&f=ifr&linkID=4e3d0b92b50545251329e91f297ec7b5&t=yukuduri-22&tracking_id=yukuduri-22" width="125" height="125" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=21&l=ur1&category=primemusic&f=ifr&linkID=61dfe35ee6aa5fbc181d2e3082001657&t=yukuduri-22&tracking_id=yukuduri-22" width="125" height="125" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=21&l=ur1&category=prime&banner=1WT49PG7NCW1T3CP8KR2&f=ifr&linkID=46642f8b37044c43faa5cc720c248da4&t=yukuduri-22&tracking_id=yukuduri-22" width="125" height="125" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=21&l=ur1&category=amazonstudent&banner=0W6X921A26JZXY9KSKR2&f=ifr&linkID=6e5959f0e0a0c6b2045f76c6e996357e&t=yukuduri-22&tracking_id=yukuduri-22" width="125" height="125" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=21&l=ur1&category=coupons&banner=024PRW0SYTB79SQAZ882&f=ifr&linkID=745bc03168a0115508790e609acb68fe&t=yukuduri-22&tracking_id=yukuduri-22" width="125" height="125" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=21&l=ur1&category=primevideo&banner=0N9AQ29KVQ24SH442AG2&f=ifr&linkID=2423e2b5d1832ee3c13693ca1d6435a2&t=yukuduri-22&tracking_id=yukuduri-22" width="125" height="125" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=21&l=ur1&category=coin&banner=1SSAG6HNA4ZCS61JWN02&f=ifr&linkID=76d09297a7c8c9d000ab95a4c6716acb&t=yukuduri-22&tracking_id=yukuduri-22" width="125" height="125" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=21&l=ur1&category=amazonsale&banner=0CYME56SEMH8PV4RJYG2&f=ifr&linkID=c968938e20cbb0ca49d801c51cdd4f3e&t=yukuduri-22&tracking_id=yukuduri-22" width="125" height="125" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+      <p class="footer-space" style="text-align: left"><b>◯広告をブロックされている方へ</b></p>
+      <p class="footer-space">サイト運営存続のため、<a target="_blank" href="https://www.amazon.co.jp/?&_encoding=UTF8&tag=yukuduri-22&linkCode=ur2&linkId=7210b0ce4406067ddbdc1018de915954&camp=247&creative=1211">こちら</a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=yukuduri-22&l=ur2&o=9" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />からAmazonでお買い物していただくだけでサイト運営の支えになります。</p>
     </section>
     
+      
     
     
     <div class="Loading">
