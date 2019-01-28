@@ -49,7 +49,15 @@
         blockAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
       }
       
-      
+      var $win = $(window);
+
+      $win.on('load resize', function() {
+        var windowWidth = window.innerWidth;
+
+        if (windowWidth < 1024) {
+          $('.footer-space').show();
+        } 
+      });
     </script>
     
     <!--<script type="text/javascript">
