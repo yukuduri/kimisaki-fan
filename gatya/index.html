@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116727610-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-116727610-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5,user-scalable=yes,initial-scale=1.0" />
+    <meta name="description" content="あんガル関連イベントのガチャシミュレータです。">
+    <title>君咲ガチャシミューレータ</title> 
+    <link rel="stylesheet" href="../css/reset.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/gatya-simulator.js"></script>
+  </head>
+
+  <body>
+    <noscript><section class="item footer"><h1 class="heading">このサイトの正常な表示・動作には、JavaScriptが必要です。<br>JavaScript対応のブラウザで、JavaScriptを有効にしてから再度アクセスしてください。<br>©2018 kimisaki-fan.net</h1></section></noscript>
+    <header class="header item">
+      <h1>
+        <a href="../">
+          <img style="height: 164px" src="../images/logo.svg" alt="kimisaki-fan.net">
+        </a>
+      </h1>
+      <h1 class="header">君咲ガチャシミュレータ</h1>
+    </header>
+    
+    <section class="item header">
+      <form name="simulator" action="#">
+        <input type="text" name="usrName" placeholder="ユーザー名(任意)"><br><br>
+        <select name="event">
+          <option value="NULL">--選択してください--</option>
+          <option value="cafe19w">ガルカフェ2019冬</option>
+        </select>
+        <input type="button" value="ガチャを選択" onClick="selectEvent()">
+        <div id="selectItemArea"></div>
+        <br>
+        <select name="year">
+          <option value="ALL">--全学年--</option>
+          <option value="1">1年生</option>
+          <option value="2">2年生</option>
+          <option value="3">3年生</option>
+        </select>
+        <input type="button" value="ガチャ対象の学年を選択" onClick="selectChara()">
+        <div id="selectCharaArea"></div>
+        <br>
+        <p class="discliption">オプションを選択</p>
+        <select name="gatya_option">
+          <option value="NULL">--選択してください--</option>
+          <option value="time1">1回引く</option>
+          <option value="time10">10回引く(チャームは5連)</option>
+          <option value="chara">欲しいキャラが出るまで引く</option>
+        </select><br><br>
+        <input type="button" value="結果表示" onClick="simulate()">
+      </form>
+      <hr>
+      <form name="result" action="#">
+        <textarea name="result_text" id="result" rows="4" cols="40" placeholder="「結果表示」を押すとここに結果が表示されます" readonly></textarea>
+        <br>
+        <input type="button" value="クリップボードにコピー" onClick="copyText()">
+        <input type="button" value="ツイートする" onClick="tweet()">
+      </form>
+    </section>
+    
+    <section class="item footer">
+      <script>footer();</script>
+    </section>
+  </body>
+</html>
