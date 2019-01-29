@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
     <script type="text/javascript" src="../js/gatya-simulator.js"></script>
     <script type="text/javascript" src="../js/blockadblock.js"></script>
@@ -54,6 +55,7 @@
           $('.footer-space').show();
         } 
       });
+      
     </script>
   </head>
 
@@ -79,7 +81,7 @@
         <div id="selectItemArea"></div>
         <br>
         <select name="year">
-          <option value="ALL">--全学年--</option>
+          <option value="ALL">全学年</option>
           <option value="1">1年生</option>
           <option value="2">2年生</option>
           <option value="3">3年生</option>
@@ -88,10 +90,10 @@
         <div id="selectCharaArea"></div>
         <br>
         <p class="discliption">オプションを選択</p>
-        <select name="gatya_option">
+        <select name="gatya_option" id="gatya_option">
           <option value="NULL">--選択してください--</option>
           <option value="time1">1回引く</option>
-          <option value="time10">10回引く(チャームは5連)</option>
+          <option value="time10">10回引く</option>
           <option value="chara">欲しいキャラが出るまで引く</option>
         </select><br><br>
         <input type="button" value="結果表示" onClick="simulate()">

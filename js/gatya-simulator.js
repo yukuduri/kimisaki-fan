@@ -22,6 +22,8 @@ function simulate() {
       if(gatya_option!='NULL'){
         resultText = "【";
         if(usr!=''){
+          usr = usr.replace(/[@＠]/g,'@ ');
+          usr = usr.replace(/[‪#＃‬]/g,'♯');
           resultText+=usr+'さんの'
         }
         resultText+='ガチャ結果】'
@@ -68,7 +70,7 @@ function simulate() {
                 }
               }        
               if(gatya_times==gatya_MAX && gatya_hazure){
-                resultText+=cafe19w[itemName]*gatya_MAX+'円でかけて'+gatya_MAX+'回引いたが、'+chara+'の'+itemName+'を引くことはできなかった。。。';
+                resultText+=cafe19w[itemName]*gatya_MAX+'円かけて'+gatya_MAX+'回引いたが、'+chara+'の'+itemName+'を引くことはできなかった。。。';
               }else{
                 if(itemName=='アクリルチャーム'){
                   if(gatya_times%2==0){
@@ -108,6 +110,8 @@ function selectEvent(){
   
   if(event == 'cafe19w'){
     document.getElementById('selectItemArea').innerHTML = '<p class=\"discliption\">欲しいアイテムを選択</p><select name=\"itemName\"><option value=\"コースター\">コースター</option><option value=\"アクリルチャーム\">アクリルチャーム</option><option value=\"アクキー\">アクキー</option><option value=\"缶バッジ\">缶バッジ</option></select>';
+    $("select[name='gatya_option'] option[value='time10']").remove();
+    $("select[name='gatya_option'] option[value='time1']").after($("<option>").val("time10").text("10回引く(チャームは5連)"));
   }else{
     alert("ガチャは選択必須です");
     document.getElementById('selectItemArea').innerHTML = '';
